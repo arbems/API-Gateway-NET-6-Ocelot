@@ -10,7 +10,6 @@
     <None Remove="Ocelot" />
     <None Remove="handlers\" />
     <None Remove="aggregates\" />
-    <None Remove="Dtos\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Ocelot" Version="18.0.0" />
@@ -23,6 +22,5 @@
   <ItemGroup>
     <Folder Include="handlers\" />
     <Folder Include="aggregates\" />
-    <Folder Include="Dtos\" />
   </ItemGroup>
 </Project>

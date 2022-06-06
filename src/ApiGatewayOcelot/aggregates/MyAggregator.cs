@@ -12,7 +12,6 @@ namespace ApiGatewayOcelot.aggregates;
 
 public class MyAggregator : IDefinedAggregator
 {
-
     public async Task<DownstreamResponse> Aggregate(List<HttpContext> responses)
     {
         var posts = await responses[0].Items.DownstreamResponse().Content.ReadFromJsonAsync<List<PostDto>>();
@@ -23,9 +22,7 @@ public class MyAggregator : IDefinedAggregator
             post.comments.AddRange(comments?.Where(a => a.PostId == post.Id));
         });
 
-        var jsonString = JsonConvert.SerializeObject(
-           posts, Formatting.Indented,
-           new JsonConverter[] { new StringEnumConverter() });
+        var jsonString = JsonConvert.SerializeObject(posts, Formatting.Indented, new JsonConverter[] { new StringEnumConverter() });
 
         var stringContent = new StringContent(jsonString)
         {
