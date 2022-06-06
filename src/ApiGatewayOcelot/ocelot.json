@@ -1,0 +1,43 @@
+﻿{
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "posts",
+        "comments"
+      ],
+      "UpstreamPathTemplate": "/postComments",
+      "Aggregator": "MyAggregator"
+    }
+  ],
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/posts",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/Posts",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "posts"
+    },
+    {
+      "DownstreamPathTemplate": "/comments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/Comments",
+      "UpstreamHttpMethod": [ "Get" ], // si dejamos vacio, es igual que añadir todos los verbos
+      "Key": "comments"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44343"
+  }
+}

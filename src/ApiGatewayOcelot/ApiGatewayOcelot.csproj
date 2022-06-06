@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Ocelot" />
+    <None Remove="handlers\" />
+    <None Remove="aggregates\" />
+    <None Remove="Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Ocelot" Version="18.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="ocelot.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="handlers\" />
+    <Folder Include="aggregates\" />
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+</Project>
