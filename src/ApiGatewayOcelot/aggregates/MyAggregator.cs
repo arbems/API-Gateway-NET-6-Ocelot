@@ -1,12 +1,10 @@
-﻿using System.Net;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Text.Json;
-using ApiGatewayOcelot.Dtos;
+﻿using ApiGatewayOcelot.Dtos;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Ocelot.Middleware;
 using Ocelot.Multiplexer;
+using System.Net;
+using System.Net.Http.Headers;
 
 namespace ApiGatewayOcelot.aggregates;
 

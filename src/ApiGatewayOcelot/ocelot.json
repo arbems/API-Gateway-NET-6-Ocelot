@@ -11,6 +11,25 @@
   ],
   "Routes": [
     {
+      "DownstreamPathTemplate": "/users",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/Users",
+      "UpstreamHttpMethod": [ "Get" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "5s",
+        "PeriodTimespan": 3,
+        "Limit": 1
+      }
+    },
+    {
       "DownstreamPathTemplate": "/posts",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -21,7 +40,14 @@
       ],
       "UpstreamPathTemplate": "/Posts",
       "UpstreamHttpMethod": [ "Get" ],
-      "Key": "posts"
+      "Key": "posts",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "UserType": "registered"
+      }
     },
     {
       "DownstreamPathTemplate": "/comments",
@@ -34,7 +60,27 @@
       ],
       "UpstreamPathTemplate": "/Comments",
       "UpstreamHttpMethod": [ "Get" ], // si dejamos vacio, es igual que añadir todos los verbos
-      "Key": "comments"
+      "Key": "comments",
+      "DelegatingHandlers": [
+        "FakeHandler",
+        "ApiKeyHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/albums",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "jsonplaceholder.typicode.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/Albums",
+      "UpstreamHttpMethod": [ "Get" ],
+      "FileCacheOptions": {
+        "TtlSeconds": 15,
+        "Region": "somename"
+      }
     }
   ],
   "GlobalConfiguration": {
