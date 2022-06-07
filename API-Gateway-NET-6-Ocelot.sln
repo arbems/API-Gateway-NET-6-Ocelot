@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGatewayOcelot", "src\ApiGatewayOcelot\ApiGatewayOcelot.csproj", "{22696250-AB13-46F0-A06D-8BFE9917FF52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeGetToken", "FakeGetTokenAsync\FakeGetToken.csproj", "{320AE9F9-F9B1-42DE-AB61-93346145013E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakeGetToken", "src\FakeGetTokenAsync\FakeGetToken.csproj", "{337DEA36-3140-4179-86CA-D5212617C9FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{22696250-AB13-46F0-A06D-8BFE9917FF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22696250-AB13-46F0-A06D-8BFE9917FF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22696250-AB13-46F0-A06D-8BFE9917FF52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{320AE9F9-F9B1-42DE-AB61-93346145013E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{320AE9F9-F9B1-42DE-AB61-93346145013E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{320AE9F9-F9B1-42DE-AB61-93346145013E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{320AE9F9-F9B1-42DE-AB61-93346145013E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337DEA36-3140-4179-86CA-D5212617C9FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337DEA36-3140-4179-86CA-D5212617C9FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337DEA36-3140-4179-86CA-D5212617C9FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337DEA36-3140-4179-86CA-D5212617C9FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
